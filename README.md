@@ -58,6 +58,32 @@ Reading 50,000+ data points makes most websites slow. We solved this by:
 
 ---
 
+## 🌐 Cloud Deployment (Optional)
+
+If you choose to deploy your One-Geo platform to the cloud, here is your roadmap:
+
+### 1. Database (PostgreSQL)
+
+- **Local**: You are currently using localhost.
+- **Cloud**: Use **AWS RDS**, **Supabase**, or **Railway**. Update your `DATABASE_URL` in the environment settings.
+
+### 2. Backend (FastAPI)
+
+- **Hosting**: Use **Render**, **Railway**, or **AWS App Runner**.
+- **Requirement**: Set all `.env` variables in your provider's "Environment Variables" dashboard.
+- **Command**: Use `gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app`.
+
+### 3. Frontend (React)
+
+- **Hosting**: Use **Vercel**, **Netlify**, or **AWS Amplify**.
+- **Config**: Ensure `VITE_API_URL` points to your deployed Backend URL.
+
+### 4. Storage (S3)
+
+- **The Best Part**: Since you already configured S3, your files will stay in the SAME cloud bucket whether you run the app locally or in production!
+
+---
+
 ## 🔬 AI Analysis (Data-Grounded)
 
 Our AI doesn't just "guess"—it uses actual math to stay accurate:

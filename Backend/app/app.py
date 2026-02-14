@@ -4,7 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from .database import Base, engine
 from . import wells, interpret, chat
 
-app = FastAPI(title="OneGeo API", version="1.0.0")
+app = FastAPI(title="OneGeo API")
+
 
 Base.metadata.create_all(bind=engine)
 
