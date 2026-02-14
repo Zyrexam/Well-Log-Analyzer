@@ -2,6 +2,8 @@
 
 **OneGeo** is an engineering-grade subsurface data platform designed to ingest, visualize, and interpret LAS (Log ASCII Standard) data. Built for high performance and data-grounded AI insights.
 
+### 🌐 Live Platform: [well-log-analyzer.vercel.app](https://well-log-analyzer.vercel.app/)
+
 ## 🚀 Submission Checklist & How to Run
 
 ### Prerequisites

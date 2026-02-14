@@ -59,9 +59,10 @@
   color: var(--text-bright);
 }
 
-.logo-icon {
-  font-size: 24px;
-  color: var(--accent-amber);
+.logo-img {
+  height: 28px;
+  width: 28px;
+  object-fit: contain;
 }
 
 .logo-accent {
