@@ -34,39 +34,37 @@ _The platform will be accessible at `http://localhost:5173`._
 
 ---
 
-## 🛠 Architectural Decisions (Justification)
+## 🛠 Technical Decisions (Simply Explained)
 
-### 1. Database Choice: PostgreSQL
+### 1. Why PostgreSQL?
 
-We chose **PostgreSQL** for three primary reasons:
+We chose PostgreSQL because it is reliable and handles scientific data perfectly:
 
-- **Relational Consistency**: Subsurface data requires strict relationships between Wells, Curves, and Header Metadata.
-- **JSONB Strategy**: Well logs have irregular schemas (Well A might have Gamma Ray, Well B might not). We store measurements in a specialized `WellData` table using `JSONB` for the curve values, which allows indexable, flexible storage without schema migrations for new curve types.
-- **Bulk Performance**: PostgreSQL handles the bulk-insertion of 10,000+ depth rows per LAS file efficiently via SQLAlchemy's mapping interface.
+- **Organized**: It keeps wells, charts, and history neatly linked together.
+- **Flexible**: Every well has different curve names (like Gamma Ray or Gas). We use a "JSON" feature to store these without breaking the database.
+- **Fast**: It can save over 10,000 lines of data in just a few seconds.
 
-### 2. File Storage Strategy: Hybrid S3 + Local
+### 2. Smart File Storage (S3 + Local)
 
-Every LAS file is treated with "Cloud-First" durability.
+- **Amazon S3**: Files are saved safely in the cloud so they are never lost.
+- **Local Fallback**: If you don't have AWS setup, the app automatically saves files to a local folder so it still works perfectly for you.
 
-- **Amazon S3**: Original files are streamed to S3 for long-term storage and archival.
-- **Local Fallback**: For local evaluation/development, the system automatically detects missing AWS credentials and falls back to a local `uploads/` directory, ensuring the app is always functional.
+### 3. Smooth Charts (No Lag)
 
-### 3. Visualization: Precision Downsampling
+Reading 50,000+ data points makes most websites slow. We solved this by:
 
-To prevent browser lag with files containing 50,000+ data points:
-
-- **Calculation**: Statistics (Max, Min, StdDev) are calculated on the **Full Dataset** in Python for precision.
-- **Rendering**: The chart receives a **Downsampled Stream** (e.g., every 5th point) based on user selection, ensuring a "snappy" 60fps interaction on the frontend while showing the full scientific breadth.
+- **Accurate Math**: Python calculates the "peaks" and "averages" on the full data so nothing is missed.
+- **Fast Viewing**: We only send a smaller "sample" of the points to your screen. This makes the charts feel super smooth while still showing the correct trends.
 
 ---
 
-## 🔬 AI Grounding (The Technical Edge)
+## 🔬 AI Analysis (Data-Grounded)
 
-The AI Interpretation engine is not a generic "wrapper." It utilizes a **Grounding-First** approach:
+Our AI doesn't just "guess"—it uses actual math to stay accurate:
 
-1. **Pre-Analysis**: Python calculates hydrocarbon indicators (Gas Wetness Index, Balance Index) before the LLM sees the data.
-2. **Technical Grounding**: The prompt is injected with these hard-numbers. This prevents "AI hallucinations" by forcing the model (Llama-3.3-70b) to reference exact peak values and depths verified by the backend.
-3. **Groq Acceleration**: We use Groq's LPUs to deliver complex geological reports in <2 seconds.
+1. **Fact-Checking**: Before the AI speaks, our system calculates real engineering ratios (like Gas Wetness).
+2. **Hard Evidence**: We give these exact numbers to the AI. This stops it from making things up ("hallucinating") and forces it to use the real spikes in your data.
+3. **Instant Reports**: Powered by Groq, your geological reports are ready in under 2 seconds.
 
 ---
 
