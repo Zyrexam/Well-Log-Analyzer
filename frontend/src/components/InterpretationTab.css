@@ -12,6 +12,25 @@
   /* overflow-y: auto; Removed for page scrolling */
 }
 
+.depth-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.input-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.input-wrap input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 .control-label {
   font-size: 13px;
   font-weight: 800;

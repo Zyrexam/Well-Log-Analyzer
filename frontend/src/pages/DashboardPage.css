@@ -7,57 +7,57 @@
 
 .dashboard-tabs {
   display: flex;
-  gap: 8px;
+  gap: 12px;
   align-items: center;
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-dim);
-  border-radius: var(--radius-lg);
-  padding: 8px;
+  background-color: var(--bg-darker);
+  border-bottom: 2px solid var(--border-dim);
+  padding: 0 16px;
   flex-wrap: wrap;
 }
 
 .tab-btn {
   background: none;
-  border: 1px solid transparent;
-  color: var(--text-body);
-  padding: 8px 16px;
-  border-radius: var(--radius-md);
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--text-muted);
+  padding: 16px 20px;
+  border-radius: 0;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 800;
   transition: all 0.2s;
   white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .tab-btn:hover {
-  background-color: var(--bg-hover);
-  color: var(--accent-teal);
+  color: var(--text-bright);
 }
 
 .tab-btn.active {
-  background-color: rgba(245, 166, 35, 0.15);
   color: var(--accent-amber);
-  border-color: var(--accent-amber);
+  border-bottom-color: var(--accent-amber);
 }
 
 .tab-icon {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .tab-label {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .tab-badge {
-  background-color: var(--accent-amber);
+  background-color: var(--accent-teal);
   color: #000;
-  font-size: 9px;
+  font-size: 10px;
   padding: 2px 6px;
-  border-radius: 3px;
-  font-weight: 700;
+  border-radius: 4px;
+  font-weight: 800;
   margin-left: 4px;
 }
 
@@ -66,27 +66,23 @@
   align-items: center;
   gap: 8px;
   font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--text-muted);
-  padding: 0 12px;
+  font-size: 13px;
+  color: var(--accent-teal);
+  padding: 0 16px;
   white-space: nowrap;
+  font-weight: 800;
+  margin-left: auto;
 }
 
 .dashboard-content {
   flex: 1;
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-dim);
-  border-radius: var(--radius-lg);
-  padding: 20px;
+  background-color: var(--bg-dark);
+  padding: 24px;
   overflow-y: auto;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .dashboard-tabs {
-    flex-wrap: wrap;
-  }
-
   .tab-info {
     display: none;
   }

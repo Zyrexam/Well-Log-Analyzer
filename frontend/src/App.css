@@ -95,11 +95,10 @@
 }
 
 .status-dot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background-color: var(--accent-green);
-  animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
@@ -163,13 +162,14 @@
   padding: 12px 20px;
   text-align: left;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
   transition: all 0.25s;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .nav-item:hover {
@@ -178,21 +178,20 @@
 }
 
 .nav-item.active {
-  background-color: rgba(245, 166, 35, 0.1);
+  background-color: var(--bg-surface);
   color: var(--accent-amber);
-  border-left: 3px solid var(--accent-amber);
-  padding-left: 13px;
+  border-left: 2px solid var(--accent-amber);
+  padding-left: 14px;
 }
 
 .nav-icon {
-  font-size: 16px;
-  min-width: 20px;
+  font-size: 14px;
+  min-width: 18px;
 }
 
 .nav-label {
   flex: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.4;
 }
 
 .nav-section {
@@ -202,13 +201,12 @@
 
 .nav-section-label {
   font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--accent-teal);
+  font-size: 10px;
+  color: var(--text-ghost);
   text-transform: uppercase;
-  padding: 12px 20px;
-  letter-spacing: 1px;
-  font-weight: 800;
-  opacity: 0.9;
+  padding: 8px 16px;
+  letter-spacing: 0.5px;
+  font-weight: 700;
 }
 
 .nav-well {
