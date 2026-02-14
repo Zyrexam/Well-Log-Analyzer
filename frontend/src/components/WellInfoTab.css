@@ -1,0 +1,108 @@
+.well-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.info-item {
+  background-color: var(--bg-darker);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-md);
+  padding: 12px;
+}
+
+.info-item-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.info-item-value {
+  font-size: 14px;
+  color: var(--text-bright);
+  font-weight: 700;
+  word-break: break-word;
+}
+
+.curves-desc {
+  font-size: 14px;
+  color: var(--text-body);
+  margin-bottom: 12px;
+}
+
+.curves-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.curve-tag {
+  background-color: var(--bg-darker);
+  border: 1px solid var(--border-dim);
+  color: var(--text-body);
+  padding: 8px 14px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 700;
+  transition: all 0.25s;
+}
+
+.curve-tag:hover {
+  border-color: var(--accent-teal);
+  color: var(--accent-teal);
+}
+
+/* Danger Zone */
+.danger-panel {
+  border-color: rgba(232, 85, 85, 0.2);
+}
+
+.danger-panel .panel-header {
+  border-bottom-color: rgba(232, 85, 85, 0.2);
+}
+
+.danger-title {
+  color: var(--accent-red);
+}
+
+.danger-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.danger-title-text {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-bright);
+  margin-bottom: 4px;
+}
+
+.danger-desc {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .danger-body {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

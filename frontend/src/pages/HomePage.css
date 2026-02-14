@@ -1,0 +1,242 @@
+.home-page {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.home-header {
+  height: 60px;
+  background-color: var(--bg-darker);
+  border-bottom: 1px solid var(--border-dim);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.home-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-bright);
+}
+
+.logo-icon {
+  font-size: 28px;
+  color: var(--accent-amber);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-main {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.logo-sub {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-ghost);
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-ghost);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-green);
+  animation: pulse 2s infinite;
+}
+
+/* MAIN CONTENT */
+.home-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 80px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-bright);
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 18px;
+  color: var(--text-muted);
+}
+
+.btn-large {
+  padding: 14px 40px;
+  font-size: 16px;
+}
+
+/* FEATURES */
+.features {
+  text-align: center;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.features h2 {
+  font-size: 36px;
+  color: var(--text-bright);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.feature-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-lg);
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.3s;
+}
+
+.feature-card:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--accent-amber);
+  transform: translateY(-4px);
+}
+
+.feature-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(245, 166, 35, 0.15);
+  border: 2px solid var(--accent-amber);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent-amber);
+}
+
+.feature-card h3 {
+  font-size: 16px;
+  color: var(--text-bright);
+  margin: 0;
+}
+
+.feature-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* CTA */
+.cta {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.cta h2 {
+  font-size: 32px;
+  color: var(--text-bright);
+}
+
+/* FOOTER */
+.home-footer {
+  height: 60px;
+  background-color: var(--bg-darker);
+  border-top: 1px solid var(--border-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-text {
+  display: flex;
+  gap: 24px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-ghost);
+}
+
+.footer-text span {
+  display: flex;
+  align-items: center;
+}
+
+.footer-text span:first-child {
+  border-right: 1px solid var(--border-dim);
+  padding-right: 24px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home-header,
+  .home-footer {
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .features h2,
+  .cta h2 {
+    font-size: 24px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-text {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-text span:first-child {
+    border-right: none;
+    padding-right: 0;
+  }
+}
